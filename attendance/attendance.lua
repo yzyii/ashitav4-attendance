@@ -68,7 +68,7 @@ local function get_party()
 			    sublvl = '';
             end
 
-			local message = charactername + ',' + mainjob + mainlvl + '/' + subjob + sublvl + ',' + logdate + ',' + logtime + ',UTC' + utc_offset + ',' +  zones[zone].en;
+			local message = charactername + ',' + mainjob + mainlvl + '/' + subjob + sublvl;
 			print(chat.header(addon.name):append(chat.message(message)));
 			write_to_file(playername, logdate, logtime_filename, message);
 		end
@@ -77,7 +77,7 @@ end
 
 function write_to_file(playername, logdate, logtime_filename, message)
     local path = AshitaCore:GetInstallPath() .. '\\addons\\attendance\\logs\\';
-	local logfile = playername + '_' + logdate + '_' + logtime_filename + '.csv';
+	local logfile = playername + '_' + logdate + '_' + logtime_filename + '.txt';
     
 	ashita.fs.create_dir(path);
 	
