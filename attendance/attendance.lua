@@ -68,7 +68,7 @@ local function get_party()
 			    sublvl = '';
             end
 
-			local message = charactername + ',' + mainjob + mainlvl + '/' + subjob + sublvl;
+			local message = charactername;
 			print(chat.header(addon.name):append(chat.message(message)));
 			write_to_file(playername, logdate, logtime_filename, message);
 		end
